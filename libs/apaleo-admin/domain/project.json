@@ -1,0 +1,20 @@
+{
+  "name": "apaleo-admin-domain",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/apaleo-admin/domain/src",
+  "prefix": "apaleo-admin-domain",
+  "projectType": "library",
+  "tags": ["apaleo-admin-domain"],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/apaleo-admin/domain/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
