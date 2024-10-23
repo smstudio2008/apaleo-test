@@ -1,0 +1,93 @@
+{
+  "name": "apaleo-app",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "apps/apaleo-app/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/apaleo-app",
+        "index": "apps/apaleo-app/src/index.html",
+        "browser": "apps/apaleo-app/src/main.ts",
+        "polyfills": ["zone.js"],
+        "tsConfig": "apps/apaleo-app/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/apaleo-app/src/favicon.ico",
+          "apps/apaleo-app/src/assets"
+        ],
+        "styles": ["apps/apaleo-app/src/styles.scss"],
+        "scripts": [],
+        "server": "apps/apaleo-app/src/main.server.ts",
+        "prerender": true,
+        "ssr": {
+          "entry": "apps/apaleo-app/server.ts"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "apaleo-app:build:production"
+        },
+        "development": {
+          "buildTarget": "apaleo-app:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "buildTarget": "apaleo-app:build"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "apps/apaleo-app/jest.config.ts"
+      }
+    },
+    "serve-static": {
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "apaleo-app:build",
+        "port": 4200,
+        "staticFilePath": "dist/apps/apaleo-app/browser",
+        "spa": true
+      }
+    }
+  }
+}
