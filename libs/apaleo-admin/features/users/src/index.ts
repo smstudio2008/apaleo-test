@@ -1,1 +1,1 @@
-export * from './lib/apaleo-admin-users/apaleo-admin-users.component';
+export * from './lib/users-features-apaleo-admin.module';

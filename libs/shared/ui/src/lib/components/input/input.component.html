@@ -1,0 +1,8 @@
+<input 
+  type="text" 
+  [placeholder]="placeholder" 
+  [disabled]="disabled"
+  [(ngModel)]="value"
+  (ngModelChange)="onValueChange($event)" 
+  class="input-field"
+/>

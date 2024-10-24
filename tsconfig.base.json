@@ -1,24 +1,24 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "rootDir": ".",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
-    "lib": ["es2020", "dom"],
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@apaleo-admin/domain": ["libs/apaleo-admin/domain/src/index.ts"],
-      "@apaleo-admin/users": ["libs/apaleo-admin/features/users/src/index.ts"],
-      "@apaleo/ui": ["libs/shared/ui/src/index.ts"]
-    }
-  },
-  "exclude": ["node_modules", "tmp"]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "rootDir": ".",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "es2015",
+        "module": "esnext",
+        "lib": ["es2020", "dom"],
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@apaleo-admin/domain": ["libs/apaleo-admin/domain/src/index.ts"],
+            "@apaleo-admin/users": ["libs/apaleo-admin/features/users/src/index.ts"],
+            "@apaleo/ui": ["libs/shared/ui/src/index.ts"]
+        }
+    },
+    "exclude": ["node_modules", "tmp"]
 }

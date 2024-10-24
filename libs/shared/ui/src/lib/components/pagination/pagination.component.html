@@ -1,0 +1,24 @@
+<div class="pagination">
+  <apaleo-ui-button
+    label="Previous"
+    type="secondary"
+    [disabled]="currentPage === 0"
+    (clicked)="onPageChange(currentPage - 1)">
+  </apaleo-ui-button>
+
+  <span *ngFor="let page of [].constructor(totalPages); let i = index">
+    <apaleo-ui-button
+      [label]="(i + 1).toString()"
+      type="primary"
+      [ngClass]="{'active': i === currentPage}"
+      (clicked)="onPageChange(i)">
+    </apaleo-ui-button>
+  </span>
+
+  <apaleo-ui-button
+    label="Next"
+    type="secondary"
+    [disabled]="currentPage === totalPages - 1"
+    (clicked)="onPageChange(currentPage + 1)">
+  </apaleo-ui-button>
+</div>
