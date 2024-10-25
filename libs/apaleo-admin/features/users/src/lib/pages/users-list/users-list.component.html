@@ -1,1 +1,17 @@
-<apaleo-admin-users-list-detail></apaleo-admin-users-list-detail>
+<apaleo-admin-users-filter
+    (searchValue)="assignValue($event)"
+    (sortingValue)="sortingValue($event)">
+  </apaleo-admin-users-filter>
+
+<apaleo-admin-users-list-detail
+    [userData]="(userDataInfo$ | async)"
+    [sort]="sortType"
+    [search]="searchTerm">
+  </apaleo-admin-users-list-detail>
+
+<apaleo-ui-pagination
+    [totalItems]="(userDataInfo$ | async)?.length ?? 0"
+    [pageSize]="(userDataInfo$ | async)?.length ?? 0"
+    [currentPage]="0"
+    (pageChange)="handlePageChange($event)">
+</apaleo-ui-pagination>

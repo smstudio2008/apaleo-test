@@ -21,12 +21,7 @@
           "apps/apaleo-app/src/assets"
         ],
         "styles": ["apps/apaleo-app/src/styles.scss"],
-        "scripts": [],
-        "server": "apps/apaleo-app/src/main.server.ts",
-        "prerender": true,
-        "ssr": {
-          "entry": "apps/apaleo-app/server.ts"
-        }
+        "scripts": []
       },
       "configurations": {
         "production": {

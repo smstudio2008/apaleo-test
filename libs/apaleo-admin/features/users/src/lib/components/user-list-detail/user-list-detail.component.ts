@@ -1,20 +1,14 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { IUser } from '@apaleo-admin/domain';
 
 @Component({
     selector: 'apaleo-admin-users-list-detail',
     templateUrl: './user-list-detail.component.html',
     styleUrls: ['./user-list-detail.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserListDetailComponent {
-
-  public user = {
-    firstName: 'John',
-    lastName: 'Doe',
-    age: 28,
-    address: {
-      street: '123 Main St',
-      city: 'London'
-    },
-    imageUrl: 'https://fakeimg.pl/200x200?text=Profile&font=lobster'
-  };
+    @Input() public userData: IUser[] | null | undefined;
+    @Input() public search: string | undefined;
+    @Input() public sort: string | undefined;
 }

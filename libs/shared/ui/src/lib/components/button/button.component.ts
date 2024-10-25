@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { NgIf, NgClass } from '@angular/common';
 
@@ -8,6 +8,7 @@ import { NgIf, NgClass } from '@angular/common';
   styleUrls: ['./button.component.scss'],
   standalone: true,
   imports: [NgIf, NgClass],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ButtonComponent {
   @Input() public label = 'Button';

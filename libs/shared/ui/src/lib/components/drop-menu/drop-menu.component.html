@@ -1,4 +1,4 @@
-<select [value]="selectedOption" (change)="onOptionSelect($event)" class="dropdown">
+<select [value]="selectedOption" (change)="onSelect($event)" class="dropdown">
   @for (option of options; track option) {
     <option [value]="option">
       {{ option }}

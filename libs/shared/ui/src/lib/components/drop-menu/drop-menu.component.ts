@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'apaleo-ui-dropdown',
   templateUrl: './drop-menu.component.html',
   styleUrls: ['./drop-menu.component.scss'],
-  standalone: true
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DropdownComponent {
   @Input() public options: string[] = [];
@@ -12,7 +13,7 @@ export class DropdownComponent {
 
   @Output() public optionChange: EventEmitter<string> = new EventEmitter<string>();
 
-  public onOptionSelect(event: Event): void {
+  public onSelect(event: Event): void {
     const target = event.target as HTMLSelectElement;
   
     this.optionChange.emit(target.value);

@@ -2,7 +2,7 @@
   type="text" 
   [placeholder]="placeholder" 
   [disabled]="disabled"
-  [(ngModel)]="value"
-  (ngModelChange)="onValueChange($event)" 
+[value]="value" 
+(input)="onValueChange($event)"
   class="input-field"
 />

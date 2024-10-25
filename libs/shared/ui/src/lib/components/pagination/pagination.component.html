@@ -6,14 +6,14 @@
     (clicked)="onPageChange(currentPage - 1)">
   </apaleo-ui-button>
 
-  <span *ngFor="let page of [].constructor(totalPages); let i = index">
+  <!-- <span *ngFor="let page of []?.constructor(totalPages); let i = index">
     <apaleo-ui-button
       [label]="(i + 1).toString()"
       type="primary"
       [ngClass]="{'active': i === currentPage}"
       (clicked)="onPageChange(i)">
     </apaleo-ui-button>
-  </span>
+  </span> -->
 
   <apaleo-ui-button
     label="Next"

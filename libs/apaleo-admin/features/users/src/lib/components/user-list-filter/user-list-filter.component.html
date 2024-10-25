@@ -1,0 +1,9 @@
+<apaleo-ui-input 
+ (valueChange)="onSearch($event)"
+[placeholder]="'Please Search...'">
+</apaleo-ui-input>
+
+<apaleo-ui-dropdown
+   [options]="['asc', 'desc']"
+   (optionChange)="onOptionSelected($event)">
+</apaleo-ui-dropdown>

@@ -4,6 +4,8 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { UserListDetailComponent } from './user-list-detail.component';
+import { FilterSearchPipe } from '../../pipes/filter-search.pipe';
+import { SortingPipe } from '../../pipes/sorting.pipe';
 
 describe('UserListDetailComponent', () => {
   let component: UserListDetailComponent;
@@ -11,7 +13,7 @@ describe('UserListDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserListDetailComponent ]
+      declarations: [ UserListDetailComponent ,FilterSearchPipe,SortingPipe]
     })
     .compileComponents();
   }));

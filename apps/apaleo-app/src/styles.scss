@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    min-height: 100vh; // Minimum height to ensure scrollbar appears
+    padding-right: 0 !important;
+
+    font-family: "Delius", cursive;
+    font-optical-sizing: auto;
+
+    letter-spacing: normal;
+
+}

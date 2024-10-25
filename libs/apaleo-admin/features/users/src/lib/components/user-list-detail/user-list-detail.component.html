@@ -1,24 +1,10 @@
-<apaleo-ui-card
-  [title]="'Profile: ' + user.firstName + ' ' + user.lastName"
-  [content]="user.address.street + ', ' + user.address.city"
-  [imageUrl]="user.imageUrl"
-  [actions]="['Edit', 'Delete']">
+@for (user of userData | filterSearch: search | sorting: sort; track $index) {
+  <apaleo-ui-card
+    [title]="'Profile: ' + user?.firstName + ' ' + user?.lastName"
+    [content]="user?.address?.city"
+    [imageUrl]="'https://fakeimg.pl/200x200?text=Profile&font=lobster'"
+    [actions]="['Delete']">
 </apaleo-ui-card>
-<apaleo-ui-card
-  [title]="'Profile: ' + user.firstName + ' ' + user.lastName"
-  [content]="user.address.street + ', ' + user.address.city"
-  [imageUrl]="user.imageUrl"
-  [actions]="['Edit', 'Delete']">
-</apaleo-ui-card>
-<apaleo-ui-card
-  [title]="'Profile: ' + user.firstName + ' ' + user.lastName"
-  [content]="user.address.street + ', ' + user.address.city"
-  [imageUrl]="user.imageUrl"
-  [actions]="['Edit', 'Delete']">
-</apaleo-ui-card>
-<apaleo-ui-card
-  [title]="'Profile: ' + user.firstName + ' ' + user.lastName"
-  [content]="user.address.street + ', ' + user.address.city"
-  [imageUrl]="user.imageUrl"
-  [actions]="['Edit', 'Delete']">
-</apaleo-ui-card>
+}
+
+

@@ -3,24 +3,23 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { UsersHomeComponent } from './users-home.component';
-import { RouterModule } from '@angular/router';
-import { ButtonComponent } from '@apaleo/ui';
+import { UserListFilterComponent } from './user-list-filter.component';
+import { DropdownComponent, InputComponent } from '@apaleo/ui';
 
-describe('UsersHomeComponent', () => {
-  let component: UsersHomeComponent;
-  let fixture: ComponentFixture<UsersHomeComponent>;
+describe('UserListFilterComponent', () => {
+  let component: UserListFilterComponent;
+  let fixture: ComponentFixture<UserListFilterComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UsersHomeComponent ],
-      imports:[RouterModule,ButtonComponent]
+      declarations: [ UserListFilterComponent ]
+      ,imports:[InputComponent,DropdownComponent]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UsersHomeComponent);
+    fixture = TestBed.createComponent(UserListFilterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

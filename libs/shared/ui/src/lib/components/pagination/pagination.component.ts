@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { NgClass, NgFor } from '@angular/common';
 
@@ -7,7 +7,8 @@ import { NgClass, NgFor } from '@angular/common';
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.scss'],
   standalone: true,
-  imports: [ButtonComponent, NgClass, NgFor]
+  imports: [ButtonComponent, NgClass, NgFor],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PaginationComponent {
   @Input() public totalItems = 0;
